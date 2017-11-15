@@ -1,7 +1,6 @@
 var client = require('http-api-client');
 var sqlite3 = require("sqlite3").verbose();
-const sqliteJSON = require('sqlite-json');
-var d3 = require("d3");
+
 
 // Open a database handle
 var db = new sqlite3.Database("data.sqlite");
@@ -9,7 +8,7 @@ var p=0; var p2=0;
 
 //db.run("DELETE FROM data");
 
-var currentCount =  "2017-01-01T15:35:59.091342+03:00"
+var currentCount =  "2017-01-03T15:35:59.091342+03:00"
 
 //db.each("SELECT dateModified FROM data ORDER BY dateModified DESC LIMIT 1", function(err, timeStart) {
       
@@ -56,8 +55,8 @@ db.serialize(function() {
 		data.getJSON().data.tender.procurementMethod,
 		data.getJSON().data.tender.procurementMethodType,
 		data.getJSON().data.classification.id,
-		data.getJSON().data.tenderPeriod.startDate,
-		data.getJSON().data.additionalClassifications.id,
+		data.getJSON().data.tender.tenderPeriod.startDate,
+		data.getJSON().data.additionalClassifications[0].id,
 		data.getJSON().data.budget.notes,
 		data.getJSON().data.budget.description
 		
