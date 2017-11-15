@@ -41,7 +41,7 @@ client.request({url: 'https://public.api.openprocurement.org/api/2.3/plans?offse
 			
 
 
-if(data.getJSON().data.budget.year =="2017"){
+//if(data.getJSON().data.budget.year =="2017"){
 	
 db.serialize(function() {
 	db.run("CREATE TABLE IF NOT EXISTS data (dateModified TEXT,name TEXT,id TEXT,amount INT,procurementMethod TEXT,procurementMethodType TEXT,cpv TEXT,startDate TEXT,additionalClassifications TEXT, notes TEXT,description TEXT)");
@@ -60,12 +60,11 @@ db.serialize(function() {
 		data.getJSON().data.budget.notes,
 		data.getJSON().data.budget.description
 		
-		
 	);
 	statement.finalize();
 });
 
-}//year
+//}//year
 				
 				})
 					.catch(function  (error) {
