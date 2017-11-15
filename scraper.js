@@ -8,7 +8,7 @@ var p=0; var p2=0;
 
 //db.run("DELETE FROM data");
 
-var currentCount =  "2017-01-03T15:35:59.091342+03:00"
+var currentCount =  "2017-01-03T17:27:15.172125+02:00"
 
 //db.each("SELECT dateModified FROM data ORDER BY dateModified DESC LIMIT 1", function(err, timeStart) {
       
@@ -75,7 +75,7 @@ db.serialize(function() {
 		
 		})
 		.then(function () {	
-		if (p<3){piv ();}		
+		if (p<10){piv ();}		
 		else {
 			console.log("stop")
 				p=0;
@@ -83,7 +83,7 @@ db.serialize(function() {
 				console.log(p2)
 			setTimeout(function() {
 			
-				if (p2 < 3) {
+				if (p2 < 1000) {
 					piv ();
 				}
 				else {
